@@ -1,0 +1,40 @@
+version: "2"
+services:
+    redis:
+        image: redis:5.0
+        expose:
+            - "6397"
+    mysql:
+        image: mysql:5.7
+        expose:
+            - "3306"
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: joindin
+    web2:
+        build: docker/web2
+        expose:
+            - "80"
+        ports:
+            - "8081:80"
+        depends_on:
+          - redis
+          - api
+        volumes:
+            - ./joindin-web2:/var/www/html
+    api:
+        build: docker/api
+        expose:
+            - "80"
+        ports:
+            - "8080:80"
+        depends_on:
+            - redis
+            - mysql
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_USER: root
+            MYSQL_PASSWORD: joindin
+        volumes:
+            - ./joindin-api:/var/www/html
