@@ -46,19 +46,6 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
     php scripts/cloneRepository.php
     ```
 
-    If you are getting Git and PHP warnings and you have previously forked joind.in before the introduction of web2,
-    you can safely remove your forks of `joindin-legacy` and the even older `joind.in`.
-
-1. Run Composer Install for both web and api
-
-    ```sh
-    cd joindin-api
-    composer install
-    
-    cd joindin-web2
-    composer install
-    ```
-
 1. Start the containers
 
     ```sh
