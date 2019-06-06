@@ -55,21 +55,33 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
 
 1. Install the database
 
-   ```sh
-   docker exec -t joindin-docker_api_1 /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
-   ```
+    ```sh
+    docker exec -t joindin-docker_api_1 /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
+    ```
 1. Update the configuration
-   ```sh
-   scripts/fixConfig.sh
-   ```
+    ```sh
+    scripts/fixConfig.sh
+    ```
 
 1. Open the sites in your browser
 
-   [Api](http://localhost:8080) (http://localhost:8080)
+    [Api](http://localhost:8080) (http://localhost:8080)
 
-   [Web2](http://localhost:8081) (http://localhost:8081)
+    [Web2](http://localhost:8081) (http://localhost:8081)
 
-The images use mailhog to catch outgoing email.
-the mailhog interface can be accessed through localhost:8025
+
+1. You can log in to the joind.in test site with these credentials for an admin account:
+    - Username: imaadmin
+    - Password: password
+
+1. For other users, [look at the dbgen documentation.](https://github.com/joindin/joindin-api/tree/master/tools/dbgen#usernames-and-passwords)
+
+1. Accessing the database
+    The api's database is exposed externally on port 33060
+
+1. Emails
+    The images use mailhog to catch outgoing email.
+    the mailhog interface can be accessed through localhost:8025
+
 
 Happy coding!!!
