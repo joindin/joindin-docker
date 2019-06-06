@@ -65,9 +65,9 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
 
 1. Open the sites in your browser
 
-   Api: http://localhost:8080
+   [Api](http://localhost:8080) (http://localhost:8080)
 
-   Web2: http://localhost:8081
+   [Web2](http://localhost:8081) (http://localhost:8081)
 
 The images use mailhog to catch outgoing email.
 the mailhog interface can be accessed through localhost:8025
