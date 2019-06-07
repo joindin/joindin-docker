@@ -29,9 +29,9 @@ copyWebConfigs($repositoryToClone[1]);
 function getGitUsername(string $remoteString, bool $useHttps): string
 {
     if ($useHttps) {
-        $pattern = '/\s*Fetch URL:\s+https:\/\/github\.com\/(.+)\//';
+        $pattern = '#\shttps://github\.com/(.+)/joindin-docker\.git#';
     } else {
-        $pattern = '/\s*Fetch URL:\s+git@github\.com:(.+)\//';
+        $pattern = '#\sgit@github\.com:(.+)/joindin-docker\.git#';
     }
 
     $found = preg_match($pattern, $remoteString, $matches);
@@ -76,7 +76,7 @@ function addUpstreamRemote(string $repoName, int $index, bool $useHttps): void
 
 function isHttpsClone(string $remote): bool
 {
-    $pattern = '/\s*Fetch URL:\s+https:\/\//';
+    $pattern = '#\shttps://github\.com/.+/joindin-docker\.git#';
 
     return (bool)preg_match($pattern, $remote);
 }
