@@ -56,7 +56,7 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
 1. Install the database
 
     ```sh
-    docker exec -t joindin-docker_api_1 /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
+    docker-compose exec api /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
     ```
 1. Update the configuration
     ```sh
@@ -65,7 +65,7 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
 
 1. Open the sites in your browser
 
-    [Api](http://localhost:8080) (http://localhost:8080)
+    [Api](http://localhost:8080) (http://localhost:8080/v2.1)
 
     [Web2](http://localhost:8081) (http://localhost:8081)
 
