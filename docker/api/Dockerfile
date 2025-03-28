@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:8.3-apache
 
 RUN apt-get update && apt-get install -y \
         default-mysql-client \
@@ -10,4 +10,4 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN a2enmod rewrite
 
-RUN docker-php-ext-install json mbstring pdo pdo_mysql gd intl
+RUN docker-php-ext-install mbstring pdo pdo_mysql gd intl
