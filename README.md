@@ -16,7 +16,6 @@ by its terms.
 Install requirements. (Note: these are not required by joind.in itself, but are required for this quick start guide.)
 
     - Docker
-    - Docker-compose
     - Composer (https://getcomposer.org/)
 
 1. Make your own github fork of the following joind.in repositories:
@@ -49,14 +48,14 @@ Install requirements. (Note: these are not required by joind.in itself, but are 
 1. Start the containers
 
     ```sh
-    docker-compose build
-    docker-compose up
+    docker compose build
+    docker compose up
     ```
 
 1. Install the database
 
     ```sh
-    docker-compose exec api /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
+    docker compose exec api /var/www/html/scripts/patchdb.sh -t /var/www/html/ -d joindin -u root -p joindin -i
     ```
 1. Update the configuration
     ```sh
